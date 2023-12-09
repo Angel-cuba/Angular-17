@@ -1,1 +1,13 @@
-<p>user works!</p>
+<app-title [title]="titleLabel()"/>
+
+@if ( services.user() != null ) {
+  <section>
+    <img alt="" [srcset]="services.user()!.avatar">
+    <p>{{ services.user().first_name}} {{ services.user().last_name}}</p>
+    <p>{{ services.user().email}}</p>
+  </section>
+} @else {
+    <div class="bg-red-200">
+        <strong>Warning!</strong> You are not logged in.
+    </div>
+}
