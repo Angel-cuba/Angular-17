@@ -1,1 +1,21 @@
-<app-title title="Defer View"/>
+<app-title title="Defer View" />
+
+<section class="grid grid-cols-1">
+  @defer () {
+  <app-heavy-loaders-slow cssClass="bg-blue-300"/>
+  } @placeholder {
+    <p class="h-[500px] w-full bg-gradient-to-t from-gray-300 to-gray-500 animate-pulse">Loading...</p>
+  }
+
+  @defer (on viewport) {
+  <app-heavy-loaders-slow cssClass="bg-green-300"/>
+  } @placeholder {
+    <p class="h-[500px] w-full bg-gradient-to-t from-gray-300 to-gray-500 animate-pulse">Loading...</p>
+  }
+
+  @defer (on viewport) {
+  <app-heavy-loaders-slow cssClass="bg-red-300"/>
+  } @placeholder {
+    <p class="h-[500px] w-full bg-gradient-to-t from-gray-300 to-gray-500 animate-pulse">Loading...</p>
+  }
+</section>
