@@ -61,6 +61,14 @@ export const routes: Routes = [
             './dashboard/pages/view-transition/view-transition.component'
           ).then((m) => m.ViewTransitionComponent),
       },
+            {
+        path: 'view-transition1',
+        title: 'View Transition1',
+        loadComponent: () =>
+          import(
+            './dashboard/pages/view-transition/view-transition1.component'
+          ).then((m) => m.ViewTransition1Component),
+      },
       {
         path: '',
         redirectTo: 'control-flow',
