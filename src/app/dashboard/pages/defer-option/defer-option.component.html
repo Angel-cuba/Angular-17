@@ -1,8 +1,5 @@
 <app-title title="Defer option"></app-title>
 
-<section>
-  <h1 class="text-3xl">Interacciones</h1>
-  <hr class="my-2">
 
   @defer (on interaction) {
   <app-heavy-loaders-fast cssClass="bg-blue-400">
@@ -10,6 +7,89 @@
   </app-heavy-loaders-fast>
   } @placeholder {
     <p class="w-full h-20 bg-purple-200">clicckkck</p>
+  }
+
+
+<section>
+  <h1 class="text-3xl">Interacciones</h1>
+  <hr class="my-2">
+
+  <button #btnInteraction class="p-2 bg-blue-300 hover:bg-blue-800 transition-all rounded text-white my-2">Click me here!</button>
+
+  @defer (on interaction( btnInteraction )) {
+  <app-heavy-loaders-fast cssClass="bg-blue-400">
+    <span>On interactiooooon</span>
+  </app-heavy-loaders-fast>
+  } @placeholder {
+    <p class="w-full h-20 bg-purple-200">clicckkck</p>
+  }
+
+</section>
+
+
+
+<section>
+  <h1 class="text-3xl">Interacciones</h1>
+  <hr class="my-2">
+
+
+
+  @defer (on hover( btnInteraction )) {
+  <app-heavy-loaders-fast cssClass="bg-blue-400">
+    <span>On Hover</span>
+  </app-heavy-loaders-fast>
+  } @placeholder {
+    <p class="w-full h-20 bg-purple-200">Just hover me!</p>
+  }
+
+</section>
+
+
+<section>
+  <h1 class="text-3xl">Interacciones</h1>
+  <hr class="my-2">
+
+
+
+  @defer (on immediate ) {
+  <app-heavy-loaders-fast cssClass="bg-blue-400">
+    <span>On Immediate</span>
+  </app-heavy-loaders-fast>
+  } @placeholder {
+    <p class="w-full h-20 bg-purple-200">Did it!</p>
+  }
+
+</section>
+
+
+<section>
+  <h1 class="text-3xl">Interacciones</h1>
+  <hr class="my-2">
+
+
+
+  @defer (on timer(3s) ) {
+  <app-heavy-loaders-fast cssClass="bg-blue-400">
+    <span>Timer for 3 seconds!!!!!</span>
+  </app-heavy-loaders-fast>
+  } @placeholder {
+    <p class="w-full h-20 bg-purple-200">Waiting only 3 seconds.....</p>
+  }
+
+</section>
+
+<section>
+  <h1 class="text-3xl">Interacciones</h1>
+  <hr class="my-2">
+
+
+
+  @defer (on hover; prefetch on idle ) {
+  <app-heavy-loaders-fast cssClass="bg-blue-400">
+    <span>On Hover with prefetch</span>
+  </app-heavy-loaders-fast>
+  } @placeholder {
+    <p class="w-full h-20 bg-purple-200">Prefetching!</p>
   }
 
 </section>
