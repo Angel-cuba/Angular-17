@@ -8,43 +8,69 @@ export const routes: Routes = [
       {
         path: 'change-detection',
         title: 'Change Detection',
-        loadComponent: () => import('./dashboard/pages/change-detection/change-detection.component').then(m => m.ChangeDetectionComponent)
+        loadComponent: () =>
+          import(
+            './dashboard/pages/change-detection/change-detection.component'
+          ).then((m) => m.ChangeDetectionComponent),
       },
       {
         path: 'control-flow',
         title: 'Control Flow',
-        loadComponent: () => import('./dashboard/pages/control-flow/control-flow.component').then(m => m.ControlFlowComponent)
-      }
-      , {
+        loadComponent: () =>
+          import('./dashboard/pages/control-flow/control-flow.component').then(
+            (m) => m.ControlFlowComponent
+          ),
+      },
+      {
         path: 'defer-option',
         title: 'Defer Option',
-        loadComponent: () => import('./dashboard/pages/defer-option/defer-option.component').then(m => m.DeferOptionComponent)
+        loadComponent: () =>
+          import('./dashboard/pages/defer-option/defer-option.component').then(
+            (m) => m.DeferOptionComponent
+          ),
+      },
+      {
+        path: 'defer-views',
+        title: 'Defer Views',
+        loadComponent: () =>
+          import('./dashboard/pages/defer-views/defer-views.component').then(
+            (m) => m.DeferViewsComponent
+          ),
       },
       {
         path: 'user/:id',
         title: 'User View',
-        loadComponent: () => import('./dashboard/pages/user/user.component').then(m => m.UserComponent)
+        loadComponent: () =>
+          import('./dashboard/pages/user/user.component').then(
+            (m) => m.UserComponent
+          ),
       },
       {
         path: 'users',
         title: 'Users',
-        loadComponent: () => import('./dashboard/pages/users/users.component').then(m => m.UsersComponent)
+        loadComponent: () =>
+          import('./dashboard/pages/users/users.component').then(
+            (m) => m.UsersComponent
+          ),
       },
       {
         path: 'view-transition',
         title: 'View Transition',
-        loadComponent: () => import('./dashboard/pages/view-transition/view-transition.component').then(m => m.ViewTransitionComponent)
+        loadComponent: () =>
+          import(
+            './dashboard/pages/view-transition/view-transition.component'
+          ).then((m) => m.ViewTransitionComponent),
       },
       {
         path: '',
         redirectTo: 'control-flow',
-        pathMatch: 'full'
-      }
-    ]
+        pathMatch: 'full',
+      },
+    ],
   },
   {
     path: '',
     redirectTo: '/dashboard',
-    pathMatch: 'full'
-  }
+    pathMatch: 'full',
+  },
 ];
