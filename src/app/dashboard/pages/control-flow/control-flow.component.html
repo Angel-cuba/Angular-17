@@ -1,1 +1,52 @@
-<p>control-flow works!</p>
+<section class="grid grid-cols-1 md:grid-cols-2 gap-3">
+  <div class="bg-white rounded shadow p-10">
+
+    <h2 class="text-2xl font-bold mb-5">if: {{ showContent() }}</h2>
+    <button class="p-2 bg-blue-500 rounded text-yellow-50" (click)="toggleContent()">Click</button>
+
+    @if(showContent()){
+    <p class="text-gray-700 bg-blue-200 rounded shadow-sm">Lorem ipsum dolor sit ame
+      t, consectetur adipisicing elit. Quisquam, voluptate.</p>
+    } @else {
+    <p class="text-red-500">********</p>
+    }
+  </div>
+  <div class="bg-red-100 rounded shadow p-10">
+    <h2 class="text-2xl font-bold mb-5">switch: {{ grade() }}</h2>
+    @switch (grade()) {
+    @case('A'){
+      <p>Grade is A</p>
+      }
+    @case('B'){
+       <p>Grade is B</p>
+       }
+    @default{
+       <p>Grade is not 1, 2 or 3</p>}
+    }
+  </div>
+
+  <div class="bg-green-100 rounded shadow p-10">
+    <p>{{ frameWorks().length }}</p>
+    <ul>
+
+      @for (framework of frameWorks(); track framework; let i = $index, even =$even, odd =$odd) {
+      <li [class]="{
+        'bg-blue-200': even,
+        'bg-red-200': odd,
+        'text-yellow-500': i === 2,
+        'text-green-500': i === 3,
+        'w-1/2': i === 4      
+      }">{{ framework }}</li>
+      }
+    </ul>
+  </div>
+  <div class="bg-green-300 rounded shadow p-10">
+    <ul>
+      @for (framework of frameWorks2(); track $index) {
+      <li>{{ framework }}</li>
+      } @empty {
+      <li>Nothing to show</li>
+      }
+    </ul>
+  </div>
+</section>
